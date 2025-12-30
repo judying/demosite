@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juryeol</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+
+  <body>
+    <!-- Top Nav -->
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="#home">
+          <span class="brand-dot"></span>
+          <span class="brand-name">Juryeol 테스트 사이트</span>
+        </a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+          <a href="#home">홈</a>
+          <a href="#services">서비스</a>
+          <a href="#reviews">후기</a>
+          <a href="#faq">자주 묻는 질문</a>
+          <button class="btn btn-ghost" id="openQuoteTop">문의하기</button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <main id="home" class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+
+      <div class="container hero-grid">
+        <!-- Left copy -->
+        <section class="hero-copy">
+          <p class="pill">간단한 데모용 사이트</p>
+
+          <h1>이 사이트는<br/>테스트를 위한 사이트입니다.</h1>
+          <p class="subtitle">
+            이 페이지는 HTML/CSS/JS로 만든 테스트용 랜딩페이지입니다.
+          </p>
+        </section>
+      </div>
+
+    </main>
+
+    <!-- Content sections -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h3>서비스</h3>
+          <p class="muted">카드 형태로 기능/상품/설명을 넣을 수 있어요.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h4>Airbridge 데이터 보내기</h4>
+            <p class="muted">Login, Event, Attribute</p>
+            <button class="btn btn-secondary btn-sm open-modal" data-target="airbridgeModal">전송화면</button>
+          </article>
+
+          <article class="card">
+            <h4>Braze 데이터 보내기</h4>
+            <p class="muted">Login, Event, Attribute</p>
+            <button class="btn btn-secondary btn-sm open-modal" data-target="brazeModal">전송화면</button>
+          </article>
+
+          <article class="card">
+            <h4>Amplitude 데이터 보내기</h4>
+            <p class="muted">Event</p>
+            <button class="btn btn-secondary btn-sm open-modal" data-target="amplitudeModal">전송화면</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h3>자주 묻는 질문</h3>
+          <p class="muted">간단한 아코디언 예시입니다.</p>
+        </div>
+
+        <div class="accordion" id="accordion">
+          <button class="acc-item" type="button" aria-expanded="false">
+            <span>문의하면 얼마나 빨리 답을 받을 수 있나요?</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            보통 1영업일 내에 확인 후 연락드립니다.
+          </div>
+
+          <button class="acc-item" type="button" aria-expanded="false">
+            <span>이 페이지는 어떤 용도인가요?</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-panel">
+            HTML/CSS/JS로 만든 테스트용 랜딩페이지 템플릿입니다.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 에어브릿지 모달-->
+    <div class="modal" id="airbridgeModal" aria-hidden="true">
+      <div class="modal-backdrop" data-close="airbridgeModal"></div>
+
+      <div class="modal-dialog" role="dialog" aria-modal="true" aria-label="Airbridge 전송화면">
+        <div class="modal-head">
+          <strong>Airbridge 전송화면</strong>
+          <button class="icon-btn" data-close="airbridgeModal" aria-label="닫기">✕</button>
+        </div>
+
+        <div class="modal-body">
+          <div class="tabs" role="tablist" aria-label="Airbridge 전송 탭">
+            <button class="tab is-active" type="button" role="tab" aria-selected="true" data-tab="login">Login</button>
+            <button class="tab" type="button" role="tab" aria-selected="false" data-tab="event">Event</button>
+            <button class="tab" type="button" role="tab" aria-selected="false" data-tab="attribute">UserAttribute</button>
+          </div>
+
+          <div class="tab-panels">
+            <section class="tab-panel is-active" data-panel="login">
+              <p class="muted" style="margin-top:0">Airbridge Login</p>
+              <form id="airbridgeLoginForm">
+                <label class="field">
+                  <span>user_id</span>
+                  <input name="user_id" type="text" placeholder="예: ju_123" required />
+                </label>
+                <button class="btn btn-primary btn-block" type="submit">Login 전송</button>
+              </form>
+            </section>
+
+            <section class="tab-panel" data-panel="event">
+              <p class="muted" style="margin-top:0">Airbridge Event</p>
+              <form id="airbridgeEventForm">
+                <label class="field">
+                  <span>event_name</span>
+                  <input name="event_name" type="text" placeholder="예: airbridge.purchase" required />
+                </label>
+                <label class="field">
+                  <span>properties</span>
+                  <input name="action" type="text" placeholder="이벤트 액션">
+                  <input name="label" type="text" placeholder="이벤트 라벨">
+                  <input name="label" type="number" placeholder="이벤트 밸류">
+                </label>
+                <button class="btn btn-primary btn-block" type="submit">Event 전송</button>
+              </form>
+            </section>
+
+            <section class="tab-panel" data-panel="attribute">
+              <p class="muted" style="margin-top:0">User Attribute</p>
+              <form id="airbridgeAttrForm">
+                <label class="field">
+                  <span>key</span>
+                  <input name="key" type="text" placeholder="예: membership_tier" required />
+                </label>
+                <label class="field">
+                  <span>value</span>
+                  <input name="value" type="text" placeholder="예: gold" required />
+                </label>
+                <button class="btn btn-primary btn-block" type="submit">User Attribute 전송</button>
+              </form>
+            </section>
+          </div>
+
+          <p class="tiny" style="margin-bottom:0">(데모) submit 시 콘솔 출력</p>
+        </div>
+      </div>
+    </div>
+
+    <!--브레이즈 모달-->
+    <div class="modal" id="brazeModal" aria-hidden="true">
+      <div class="modal-backdrop" data-close="brazeModal"></div>
+
+      <div class="modal-dialog" role="dialog" aria-modal="true" aria-label="Braze 전송화면">
+        <div class="modal-head">
+          <strong>Braze 전송화면</strong>
+          <button class="icon-btn" data-close="brazeModal" aria-label="닫기">✕</button>
+        </div>
+
+        <div class="modal-body">
+          <div class="tabs" role="tablist" aria-label="Braze 전송 탭">
+            <button class="tab is-active" type="button" role="tab" aria-selected="true" data-tab="login">Login</button>
+            <button class="tab" type="button" role="tab" aria-selected="false" data-tab="event">Event</button>
+            <button class="tab" type="button" role="tab" aria-selected="false" data-tab="attribute">Attribute</button>
+          </div>
+
+          <div class="tab-panels">
+            <section class="tab-panel is-active" data-panel="login">
+              <p class="muted" style="margin-top:0">Braze Login(changeUser)</p>
+              <form id="brazeLoginForm">
+                <label class="field">
+                  <span>external_id</span>
+                  <input name="external_id" type="text" placeholder="예: user_123" required />
+                </label>
+                <button class="btn btn-primary btn-block" type="submit">Login 전송</button>
+              </form>
+            </section>
+
+            <section class="tab-panel" data-panel="event">
+              <p class="muted" style="margin-top:0">Braze Event(logCustomEvent)</p>
+              <form id="brazeEventForm">
+                <label class="field">
+                  <span>event_name</span>
+                  <input name="event_name" type="text" placeholder="예: purchase" required />
+                </label>
+
+                <!-- properties (Key-Value) -->
+                <div class="kv-block" data-kv-type="braze-event">
+                  <div class="kv-head">
+                    <span class="kv-title">properties</span>
+                    <button class="kv-add" type="button" data-add-kv="braze-event" aria-label="properties 추가">＋</button>
+                  </div>
+
+                  <div class="kv-list" id="brazeEventProps">
+                    <!-- 기본 1쌍 -->
+                    <div class="kv-row">
+                      <input class="kv-input" name="be_key[]" type="text" placeholder="key (예: item)" />
+                      <input class="kv-input" name="be_value[]" type="text" placeholder="value (예: shoes)" />
+                      <button class="kv-remove" type="button" aria-label="삭제" disabled>－</button>
+                    </div>
+                  </div>
+                </div>
+            </section>
+
+            <section class="tab-panel" data-panel="attribute">
+              <p class="muted" style="margin-top:0">Braze Attribute(setCustomUserAttribute)</p>
+              <form id="brazeAttrForm">
+                <div class="kv-block" data-kv-type="braze-attr">
+                  <div class="kv-head">
+                    <span class="kv-title">attributes</span>
+                    <button class="kv-add" type="button" data-add-kv="braze-attr" aria-label="attribute 추가">＋</button>
+                  </div>
+
+                  <div class="kv-list" id="brazeAttrList">
+                    <!-- 기본 1쌍 -->
+                    <div class="kv-row">
+                      <input class="kv-input" name="ba_key[]" type="text" placeholder="key (예: membership_tier)" />
+                      <input class="kv-input" name="ba_value[]" type="text" placeholder="value (예: gold)" />
+                      <button class="kv-remove" type="button" aria-label="삭제" disabled>－</button>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-primary btn-block" type="submit">Attribute 전송</button>
+              </form>
+            </section>
+          </div>
+
+          <p class="tiny" style="margin-bottom:0">(데모) submit 시 콘솔 출력</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 앰플리튜드 모달-->
+    <div class="modal" id="amplitudeModal" aria-hidden="true">
+      <div class="modal-backdrop" data-close="amplitudeModal"></div>
+
+      <div class="modal-dialog" role="dialog" aria-modal="true" aria-label="Amplitude 전송화면">
+        <div class="modal-head">
+          <strong>Amplitude 전송화면</strong>
+          <button class="icon-btn" data-close="amplitudeModal" aria-label="닫기">✕</button>
+        </div>
+
+        <div class="modal-body">
+          <div class="tabs" role="tablist" aria-label="Amplitude 전송 탭">
+            <button class="tab is-active" type="button" role="tab" aria-selected="true" data-tab="event">Event&UserProps</button>
+          </div>
+
+          <div class="tab-panels">
+            <section class="tab-panel is-active" data-panel="event">
+              <p class="muted" style="margin-top:0">Amplitude logEvent</p>
+              <!-- Amplitude Event 탭 내부 (textarea 2개 대신 아래로) -->
+              <form id="amplitudeEventForm">
+                <label class="field">
+                  <span>event_name</span>
+                  <input name="event_name" type="text" placeholder="예: page_view" required />
+                </label>
+
+                <!-- event_properties (Key-Value) -->
+                <div class="kv-block" data-kv-type="event">
+                  <div class="kv-head">
+                    <span class="kv-title">event_properties</span>
+                    <button class="kv-add" type="button" data-add-kv="event" aria-label="event_properties 추가">＋</button>
+                  </div>
+
+                  <div class="kv-list" id="ampEventProps">
+                    <!-- 기본 1쌍 -->
+                    <div class="kv-row">
+                      <input class="kv-input" name="event_key[]" type="text" placeholder="key (예: page)" />
+                      <input class="kv-input" name="event_value[]" type="text" placeholder="value (예: home)" />
+                      <button class="kv-remove" type="button" aria-label="삭제" disabled>－</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- user_properties (Key-Value) -->
+                <div class="kv-block" data-kv-type="user">
+                  <div class="kv-head">
+                    <span class="kv-title">user_properties</span>
+                    <button class="kv-add" type="button" data-add-kv="user" aria-label="user_properties 추가">＋</button>
+                  </div>
+
+                  <div class="kv-list" id="ampUserProps">
+                    <!-- 기본 1쌍 -->
+                    <div class="kv-row">
+                      <input class="kv-input" name="user_key[]" type="text" placeholder="key (예: membership_tier)" />
+                      <input class="kv-input" name="user_value[]" type="text" placeholder="value (예: gold)" />
+                      <button class="kv-remove" type="button" aria-label="삭제" disabled>－</button>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="btn btn-primary btn-block" type="submit">Event 전송</button>
+              </form>
+            </section>
+
+            <section class="tab-panel" data-panel="user">
+              <p class="muted" style="margin-top:0">Amplitude setUserProperties 자리</p>
+              <form id="amplitudeUserPropsForm">
+                <label class="field">
+                  <span>user_properties(JSON)</span>
+                  <textarea name="user_props" rows="4" placeholder='예: {"membership_tier":"gold"}'></textarea>
+                </label>
+                <button class="btn btn-primary btn-block" type="submit">User Props 전송</button>
+              </form>
+            </section>
+
+            <!-- attribute panel은 disabled 탭이라 굳이 없어도 됨 -->
+          </div>
+
+          <p class="tiny" style="margin-bottom:0">(데모) submit 시 콘솔 출력</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span>© <span id="year"></span> 테스트 사이트</span>
+        <a href="#home">맨 위로</a>
+      </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
