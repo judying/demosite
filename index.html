@@ -5,22 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JuryeolDemo</title>
     <link rel="stylesheet" href="./styles.css" />
-    <script src="https://unpkg.com/@amplitude/experiment-js-client@1.15.5/dist/experiment.umd.js"></script>
-    <script src="https://cdn.amplitude.com/script/abd0527cc3b38429edfedee3fd14874f.js"></script>
-    <script>
-      window.experiment = Experiment.initializeWithAmplitudeAnalytics('client-n647zNuxko1LDKdFyCrInlDpMvNOwPSt');
-      window.amplitude.init('abd0527cc3b38429edfedee3fd14874f', {
-        fetchRemoteConfig: true,
-        autocapture :{
-          attribution: true,
-          pageViews: true,
-          sessions: true,
-          formInteractions: false,
-          elementInteractions: false
-        },
-        loglevel: amplitude.Types.LogLevel.Debug
-      });
+    <script type="text/javascript">
+      +function(a,p,P,b,y){a.braze={};a.brazeQueue=[];for(var s="BrazeSdkMetadata DeviceProperties Card Card.prototype.dismissCard Card.prototype.removeAllSubscriptions Card.prototype.removeSubscription Card.prototype.subscribeToClickedEvent Card.prototype.subscribeToDismissedEvent Card.fromContentCardsJson ImageOnly CaptionedImage ClassicCard ControlCard ContentCards ContentCards.prototype.getUnviewedCardCount ControlMessage InAppMessage InAppMessage.SlideFrom InAppMessage.ClickAction InAppMessage.DismissType InAppMessage.OpenTarget InAppMessage.ImageStyle InAppMessage.Orientation InAppMessage.TextAlignment InAppMessage.CropType InAppMessage.prototype.closeMessage InAppMessage.prototype.removeAllSubscriptions InAppMessage.prototype.removeSubscription InAppMessage.prototype.subscribeToClickedEvent InAppMessage.prototype.subscribeToDismissedEvent InAppMessage.fromJson FullScreenMessage ModalMessage HtmlMessage SlideUpMessage User User.Genders User.NotificationSubscriptionTypes User.prototype.addAlias User.prototype.addToCustomAttributeArray User.prototype.addToSubscriptionGroup User.prototype.getUserId User.prototype.getUserId User.prototype.incrementCustomUserAttribute User.prototype.removeFromCustomAttributeArray User.prototype.removeFromSubscriptionGroup User.prototype.setCountry User.prototype.setCustomLocationAttribute User.prototype.setCustomUserAttribute User.prototype.setDateOfBirth User.prototype.setEmail User.prototype.setEmailNotificationSubscriptionType User.prototype.setFirstName User.prototype.setGender User.prototype.setHomeCity User.prototype.setLanguage User.prototype.setLastKnownLocation User.prototype.setLastName User.prototype.setPhoneNumber User.prototype.setPushNotificationSubscriptionType User.prototype.setLineId InAppMessageButton InAppMessageButton.prototype.removeAllSubscriptions InAppMessageButton.prototype.removeSubscription InAppMessageButton.prototype.subscribeToClickedEvent FeatureFlag FeatureFlag.prototype.getStringProperty FeatureFlag.prototype.getNumberProperty FeatureFlag.prototype.getBooleanProperty FeatureFlag.prototype.getImageProperty FeatureFlag.prototype.getJsonProperty FeatureFlag.prototype.getTimestampProperty Banner Banner.prototype.getStringProperty Banner.prototype.getNumberProperty Banner.prototype.getBooleanProperty Banner.prototype.getImageProperty Banner.prototype.getJsonProperty Banner.prototype.getTimestampProperty automaticallyShowInAppMessages hideContentCards showContentCards showInAppMessage deferInAppMessage toggleContentCards changeUser destroy getDeviceId getDeviceId initialize isPushBlocked isPushPermissionGranted isPushSupported logCardDismissal logContentCardImpressions logContentCardClick logBannerImpressions logBannerClick logCustomEvent logInAppMessageButtonClick logInAppMessageClick logInAppMessageHtmlClick logInAppMessageImpression logPurchase openSession requestPushPermission removeAllSubscriptions removeSubscription requestContentCardsRefresh refreshFeatureFlags requestImmediateDataFlush enableSDK isDisabled setLogger setSdkAuthenticationSignature addSdkMetadata disableSDK subscribeToContentCardsUpdates subscribeToInAppMessage subscribeToSdkAuthenticationFailures toggleLogging unregisterPush wipeData handleBrazeAction subscribeToFeatureFlagsUpdates getAllFeatureFlags logFeatureFlagImpression requestBannersRefresh insertBanner getAllBanners subscribeToBannersUpdates isInitialized".split(" "),i=0;i<s.length;i++){for(var m=s[i],k=a.braze,l=m.split("."),j=0;j<l.length-1;j++)k=k[l[j]];k[l[j]]=(new Function("return function "+m.replace(/\./g,"_")+"(){window.brazeQueue.push(arguments); return true}"))()}window.braze.getDeferredInAppMessage=function(){return new window.braze.InAppMessage};window.braze.getCachedContentCards=function(){return new window.braze.ContentCards};window.braze.getUser=function(){return new window.braze.User};window.braze.getFeatureFlag=function(){return new window.braze.FeatureFlag};window.braze.getBanner=function(){return new window.braze.Banner};window.braze.newBannerFromJson=function(){return new window.braze.Banner};(y=p.createElement(P)).type='text/javascript';
+        y.src='https://js.appboycdn.com/web-sdk/6.5/braze.min.js';
+        y.async=1;(b=p.getElementsByTagName(P)[0]).parentNode.insertBefore(y,b)
+      }(window,document,'script');
     </script>
+
+    <script>
+      (function(a_,i_,r_,_b,_r,_i,_d,_g,_e){if(!a_[_b]){var n=function(){var c=i_.createElement(r_);c.onerror=function(){h.queue.filter(function(a){return 0<=_d.indexOf(a[0])}).forEach(function(a){a=a[1];a=a[a.length-1];"function"===typeof a&&a("error occur when load airbridge")})};c.async=1;c.src=_r;"complete"===i_.readyState?i_.head.appendChild(c):a_.addEventListener("load",function k(){a_.removeEventListener("load",k);i_.head.appendChild(c)})},h={queue:[],get isSDKEnabled(){return!1}};_i.concat(_d).forEach(function(c){var a=c.split("."),k=a.pop();a.reduce(function(p,q){return p[q]=p[q]||{}},h)[k]=function(){h.queue.push([c,arguments])}});a_[_b]=h;"undefined"!==typeof i_.documentMode&&(_r=_r.replace(/^https:/,""));0<_g?(_b=new (a_.XDomainRequest||a_.XMLHttpRequest),_i=function(){},_b.open("GET",_r),_b.timeout=_g,_b.onload=function(){n()},_b.onerror=_i,_b.onprogress=_i,_b.ontimeout=_i,_b.send()):n()}})(window,document,"script","airbridge","https://static.airbridge.io/sdk/latest/airbridge.min.js","init startTracking stopTracking openBanner setBanner setDownload setDownloads openDeeplink setDeeplinks sendWeb setUserAgent setMobileAppData setUserID clearUserID setUserEmail clearUserEmail setUserPhone clearUserPhone setUserAttribute removeUserAttribute clearUserAttributes setUserAlias removeUserAlias clearUserAlias clearUser setUserId setUserAttributes addUserAlias setDeviceAlias removeDeviceAlias clearDeviceAlias setDeviceIFV setDeviceIFA setDeviceGAID events.send events.signIn events.signUp events.signOut events.purchased events.addedToCart events.productDetailsViewEvent events.homeViewEvent events.productListViewEvent events.searchResultViewEvent".split(" "),["events.wait","fetchResource","createTouchpoint","createTrackingLink"],0);
+
+      airbridge.init({
+          app: 'jutest',
+          webToken: 'd50168675bb84ba1aa2a2a54fc54d6c6',
+      })
+    </script>
+
   </head>
 
   <body>
@@ -55,9 +55,9 @@
         <section class="hero-copy">
           <p class="pill">간단한 데모용 사이트</p>
 
-          <h1>이 사이트는<br/>테스트를 위한 사이트입니다.</h1>
-          <p class="subtitle">
-            이 페이지는 HTML/CSS/JS로 만든 테스트용 랜딩페이지입니다.
+          <h1 class="head_title">안녕하세요! 이곳은 테스트를 위한 사이트입니다.</h1>
+          <p class="head_subtitle">
+            Airbridge/Braze/Amplitude 테스트하기
           </p>
         </section>
       </div>
@@ -85,7 +85,7 @@
             <button class="btn btn-secondary btn-sm open-modal" data-target="brazeModal">전송화면</button>
           </article>
 
-          <article class="card">
+          <article class="card" id="amplitude_card">
             <h4>Amplitude 데이터 보내기</h4>
             <p class="muted">Event</p>
             <button class="btn btn-secondary btn-sm open-modal" data-target="amplitudeModal">전송화면</button>
@@ -371,6 +371,6 @@
       </div>
     </footer>
 
-    <script src="./main.js"></script>
+    <script type="module" src="./main.js"></script>
   </body>
 </html>
