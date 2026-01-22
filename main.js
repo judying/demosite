@@ -2,6 +2,38 @@
 import * as amplitude from "https://esm.sh/@amplitude/analytics-browser";
 import { Experiment } from "https://esm.sh/@amplitude/experiment-js-client";
 
+
+document.addEventListener('DOMContentLoaded', function () {
+    const deeplinkBtn = document.querySelector('.open-deeplink');
+
+    if (!deeplinkBtn) return;
+
+    deeplinkBtn.addEventListener('click', function () {
+      airbridge.openDeeplink({
+        deeplinks: {
+          android: 'juryeol://',
+          ios: 'juryeol://',
+          desktop: 'https://abjuju.cafe24.com/',
+        },
+        fallbacks: {
+          android: 'google-play',
+          ios: 'itunes-appstore',
+        },
+        defaultParams: {
+          campaign: '<EXAMPLE_CAMPAIGN>',
+          medium: '<EXAMPLE_MEDIUM>',
+          term: '<EXAMPLE_TERM>',
+          content: '<EXAMPLE_CONTENT>',
+        },
+        ctaParams: {
+          cta_param_1: '<EXAMPLE_CTA_PARAM_1>',
+          cta_param_2: '<EXAMPLE_CTA_PARAM_2>',
+          cta_param_3: '<EXAMPLE_CTA_PARAM_3>',
+        },
+      });
+    });
+  });
+
 braze.initialize('2bebced7-f02d-4b28-b6bf-29faa38b1c3e', {
     baseUrl: "sdk.iad-03.braze.com",
     enableLogging: false, // set to `true` for debugging
