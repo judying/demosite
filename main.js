@@ -90,35 +90,39 @@ if (variant.value === 'treatment') {
   document.querySelector('#amplitude_card > h4').innerText = treantment_payload;
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    const openAppBtn = document.querySelector('.open-app');
+document.addEventListener('click', function (e) {
+    const btn = e.target.closest('.open-app');
+    if (!btn) return;
 
-    if (!openAppBtn) return;
+    console.log('[open-app] clicked');
 
-    openAppBtn.addEventListener('click', function () {
-      airbridge.openDeeplink({
-        type: 'click',
-        deeplinks: {
-          android: 'ablog://',
-          ios: 'ablog://',
-          desktop: 'https://blog.ab180.co/',
-        },
-        fallbacks: {
-          android: 'google-play',
-          ios: 'itunes-appstore',
-        },
-        defaultParams: {
-          campaign: '<EXAMPLE_CAMPAIGN>',
-          medium: '<EXAMPLE_MEDIUM>',
-          term: '<EXAMPLE_TERM>',
-          content: '<EXAMPLE_CONTENT>',
-        },
-        ctaParams: {
-          cta_param_1: '<EXAMPLE_CTA_PARAM_1>',
-          cta_param_2: '<EXAMPLE_CTA_PARAM_2>',
-          cta_param_3: '<EXAMPLE_CTA_PARAM_3>',
-        },
-      });
+    if (!window.airbridge || typeof window.airbridge.openDeeplink !== 'function') {
+      console.error('[airbridge] not loaded or openDeeplink is not a function', window.airbridge);
+      return;
+    }
+
+    window.airbridge.openDeeplink({
+      type: 'click',
+      deeplinks: {
+        android: 'juryeol://',
+        ios: 'ablog://',
+        desktop: 'https://blog.ab180.co/',
+      },
+      fallbacks: {
+        android: 'google-play',
+        ios: 'itunes-appstore',
+      },
+      defaultParams: {
+        campaign: '<EXAMPLE_CAMPAIGN>',
+        medium: '<EXAMPLE_MEDIUM>',
+        term: '<EXAMPLE_TERM>',
+        content: '<EXAMPLE_CONTENT>',
+      },
+      ctaParams: {
+        cta_param_1: '<EXAMPLE_CTA_PARAM_1>',
+        cta_param_2: '<EXAMPLE_CTA_PARAM_2>',
+        cta_param_3: '<EXAMPLE_CTA_PARAM_3>',
+      },
     });
   });
 
