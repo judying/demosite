@@ -60,14 +60,14 @@ const experiment = Experiment.initializeWithAmplitudeAnalytics(
 );
 console.log(experiment);
 
-/*
-const user = {
-  user_id: 'juryeol',
-  user_properties: {
-    premium: true,
-  },
-};
-*/
+
+// const user = {
+//   user_id: 'juryeol_control',
+//   user_properties: {
+//     premium: true,
+//   },
+// };
+
 
 await experiment.fetch();
 
@@ -90,7 +90,37 @@ if (variant.value === 'treatment') {
   document.querySelector('#amplitude_card > h4').innerText = treantment_payload;
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    const openAppBtn = document.querySelector('.open-app');
 
+    if (!openAppBtn) return;
+
+    openAppBtn.addEventListener('click', function () {
+      airbridge.openDeeplink({
+        type: 'click',
+        deeplinks: {
+          android: 'ablog://',
+          ios: 'ablog://',
+          desktop: 'https://blog.ab180.co/',
+        },
+        fallbacks: {
+          android: 'google-play',
+          ios: 'itunes-appstore',
+        },
+        defaultParams: {
+          campaign: '<EXAMPLE_CAMPAIGN>',
+          medium: '<EXAMPLE_MEDIUM>',
+          term: '<EXAMPLE_TERM>',
+          content: '<EXAMPLE_CONTENT>',
+        },
+        ctaParams: {
+          cta_param_1: '<EXAMPLE_CTA_PARAM_1>',
+          cta_param_2: '<EXAMPLE_CTA_PARAM_2>',
+          cta_param_3: '<EXAMPLE_CTA_PARAM_3>',
+        },
+      });
+    });
+  });
 
 /* =========================
  * 1) Layout + basic UX
