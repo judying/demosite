@@ -126,6 +126,19 @@ document.addEventListener('click', function (e) {
     });
   });
 
+document.addEventListener('click', function (e) {
+    const btn = e.target.closest('.open-hd');
+    if (!btn) return;
+
+    console.log('[open-app] clicked');
+
+    if (!window.airbridge || typeof window.airbridge.openDeeplink !== 'function') {
+      console.error('[airbridge] not loaded or openDeeplink is not a function', window.airbridge);
+      return;
+    }
+    window.location.href = "https://abr.ge/j9cziu"
+  });
+
 /* =========================
  * 1) Layout + basic UX
  * ========================= */
