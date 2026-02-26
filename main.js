@@ -102,7 +102,6 @@ document.addEventListener('click', function (e) {
     }
 
     window.airbridge.openDeeplink({
-      type: 'click',
       deeplinks: {
         android: 'airbridgesample://',
         ios: 'ablog://',
