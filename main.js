@@ -104,7 +104,7 @@ document.addEventListener('click', function (e) {
     window.airbridge.openDeeplink({
       type: 'click',
       deeplinks: {
-        android: 'juryeol://',
+        android: 'airbridgesample://',
         ios: 'ablog://',
         desktop: 'https://blog.ab180.co/',
       },
