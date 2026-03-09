@@ -36,9 +36,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
 braze.initialize('2bebced7-f02d-4b28-b6bf-29faa38b1c3e', {
     baseUrl: "sdk.iad-03.braze.com",
-    enableLogging: false, // set to `true` for debugging
-    allowUserSuppliedJavascript: false, // set to `true` to support custom HTML messages
+    enableLogging: true, 
+    allowUserSuppliedJavascript: false
 });
+
+braze.subscribeToBannersUpdates((banners) => {
+  // Get this placement's banner. If it's `null`, the user did not qualify for any banners.
+  const subBanner = braze.getBanner("sub-banner");
+  if (!subBanner) {
+    return;
+  }
+ 
+  const container = document.getElementById("sub-banner-container");
+ 
+  braze.insertBanner(subBanner, container);
+ 
+  if (subBanner.isControl) {
+    // Hide or collapse the container
+    container.style.display = "none";
+  }
+});
+
+braze.requestBannersRefresh("sub-banner");
+
 
 /* =========================
  * 0) SDK init (Amplitude / Experiment)
