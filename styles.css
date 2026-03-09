@@ -542,3 +542,9 @@ input:focus, textarea:focus {
     -webkit-overflow-scrolling: touch;
   }
 }
+
+div#sub-banner-container {
+    @media (width > 1200px){
+        height: 500px;
+    }
+}
