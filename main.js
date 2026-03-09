@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
 braze.initialize('2bebced7-f02d-4b28-b6bf-29faa38b1c3e', {
     baseUrl: "sdk.iad-03.braze.com",
     enableLogging: true, 
-    allowUserSuppliedJavascript: false
+    allowUserSuppliedJavascript: true
 });
 
 braze.subscribeToBannersUpdates((banners) => {
