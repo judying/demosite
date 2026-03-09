@@ -57,7 +57,7 @@ braze.subscribeToBannersUpdates((banners) => {
   }
 });
 
-braze.requestBannersRefresh("sub-banner");
+braze.requestBannersRefresh(["sub-banner"]);
 
 
 /* =========================
